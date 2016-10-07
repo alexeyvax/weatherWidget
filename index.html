@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ru" ng-app="weather">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Weather widget</title>
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+<body>
+
+<div ng-controller="weatherController" class="weatherController">
+	<input type="text" ng-model="city" id="dataInput" placeholder="Введите название города" />
+	<button ng-click="this.showWeather( city )" type="button">Узнать погоду в этом городе</button>
+	<span class="description"></span>
+	<ul class="output">
+		
+	</ul>
+</div>
+
+<script src="scripts/angular.min.js"></script>
+<script src="scripts/index.js"></script>
+</body>
+</html>

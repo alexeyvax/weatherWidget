@@ -1,0 +1,31 @@
+ul.output
+{
+	padding: 0;
+	margin: 0;
+}
+
+ul.output>li
+{
+	display: block;
+	padding: 10px 0;
+	list-style: none;
+}
+
+span.degrees
+{
+	position: relative;
+	
+	padding-right: 30px;
+}
+
+span.degrees::before
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	
+	width: 30px;
+	height: 100%;
+	
+	content: '°C';
+}
