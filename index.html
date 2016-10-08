@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport"
-		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Weather widget</title>
 	<link rel="stylesheet" type="text/css" href="style/style.css">
@@ -13,9 +13,14 @@
 <div ng-controller="weatherController" class="weatherController">
 	<input type="text" ng-model="city" id="dataInput" placeholder="Введите название города" />
 	<button ng-click="this.showWeather( city )" type="button">Узнать погоду в этом городе</button>
-	<span class="description"></span>
+	<span class="description">{{descriptionEmpty}}</span>
 	<ul class="output">
-		
+		<li ng-repeat="city in cities">
+			<span>{{city.city}}</span>
+			<img ng-src="http://openweathermap.org/img/w/{{city.image}}.png" alt="" />
+			<span>Температура {{city.degree}} °C</span>
+			<span>Скорость ветра {{city.speedWind}} м/с</span>
+		</li>
 	</ul>
 </div>
 

@@ -1,11 +1,8 @@
-/** Погодный виджет */
+/** weather widget */
 function main()
 {
 	const weather = angular.module( 'weather', [] );
-	const weatherController = document.querySelector( 'body>div.weatherController' );
-	const inputElement = document.getElementById( 'dataInput' );
-	const containerListCities = weatherController.querySelector( 'ul.output' );
-	const description = weatherController.querySelector( 'span.description' );
+	const storeCitiesTest = {};
 	
 	weather.controller( 'weatherController', [ '$scope', '$http', ( $scope, $http ) =>
 	{
@@ -15,8 +12,8 @@ function main()
 			{
 				const res = $http.get(
 					`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=4ad85fe4a756ae6420b5a9f180c811ed` );
-
-				// Преобразую первую букву в заглавную
+				
+				// first letter to uppercase
 				city = city.charAt(0).toUpperCase() + city.substr(1);
 				
 				res.success( ( data ) =>
@@ -42,49 +39,26 @@ function main()
 							image = data.weather[0].icon;
 						}
 						
-						console.log( data );
+						storeCitiesTest[city] = {
+							city: city,
+							image: image,
+							degree: degree,
+							speedWind: speedWind
+						};
+						
+						$scope.cities = storeCitiesTest;
 					}
-
-					containerListCities.appendChild( createElement( city, degree, speedWind, image ) );
-					inputElement.value = '';
 					
-					if ( description.textContent )
-					{
-						description.textContent = '';
-					}
+					$scope.descriptionEmpty = '';
+					$scope.city = '';
 				});
 			}
 			else
 			{
-				description.textContent = 'Введите город';
+				$scope.descriptionEmpty = 'Введите город';
 			}
 		}
 	}]);
-}
-
-function createElement( city, degree, speedWind, image )
-{
-	const container = document.createElement( 'li' );
-	const cityContainer = document.createElement( 'span' );
-	const imageContainer = document.createElement( 'img' );
-	const degreesContainer = document.createElement( 'span' );
-	const speedWindContainer = document.createElement( 'span' );
-
-	cityContainer.classList.add( 'city' );
-	degreesContainer.classList.add( 'degrees' );
-	speedWindContainer.classList.add( 'speedWind' );
-	
-	cityContainer.textContent = city;
-	imageContainer.src = `http://openweathermap.org/img/w/${image}.png`;
-	degreesContainer.textContent = `Температура ${degree} °C`;
-	speedWindContainer.textContent = `Скорость ветра ${speedWind} м/с`;
-	
-	container.appendChild( cityContainer );
-	container.appendChild( imageContainer );
-	container.appendChild( degreesContainer );
-	container.appendChild( speedWindContainer );
-	
-	return container;
 }
 
 main();
