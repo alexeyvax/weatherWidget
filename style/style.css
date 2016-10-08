@@ -11,14 +11,16 @@ ul.output>li
 	list-style: none;
 }
 
-span.degrees
+/*span.degrees,
+span.speedWind
 {
 	position: relative;
 	
 	padding-right: 30px;
 }
 
-span.degrees::before
+span.degrees::before,
+span.speedWind::before
 {
 	position: absolute;
 	top: 0;
@@ -26,6 +28,14 @@ span.degrees::before
 	
 	width: 30px;
 	height: 100%;
-	
+}
+
+span.degrees::before
+{
 	content: '°C';
 }
+
+span.speedWind::before
+{
+	content: 'м/с';
+}*/

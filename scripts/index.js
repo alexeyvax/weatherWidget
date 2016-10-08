@@ -22,6 +22,8 @@ function main()
 				res.success( ( data ) =>
 				{
 					let degree = 0;
+					let speedWind = 0;
+					let image = null;
 
 					if ( data )
 					{
@@ -29,9 +31,21 @@ function main()
 						{
 							degree = Math.ceil( (data.main.temp - 273.15) * 100 / 100 );
 						}
+						
+						if ( data.wind )
+						{
+							speedWind = data.wind.speed;
+						}
+
+						if ( data.wind )
+						{
+							image = data.weather[0].icon;
+						}
+						
+						console.log( data );
 					}
 
-					containerListCities.appendChild( createElement( city, degree ) );
+					containerListCities.appendChild( createElement( city, degree, speedWind, image ) );
 					inputElement.value = '';
 					
 					if ( description.textContent )
@@ -48,19 +62,27 @@ function main()
 	}]);
 }
 
-function createElement( city, degree )
+function createElement( city, degree, speedWind, image )
 {
 	const container = document.createElement( 'li' );
 	const cityContainer = document.createElement( 'span' );
+	const imageContainer = document.createElement( 'img' );
 	const degreesContainer = document.createElement( 'span' );
+	const speedWindContainer = document.createElement( 'span' );
 
 	cityContainer.classList.add( 'city' );
 	degreesContainer.classList.add( 'degrees' );
-	cityContainer.textContent = city + ' ';
-	degreesContainer.textContent = degree;
+	speedWindContainer.classList.add( 'speedWind' );
+	
+	cityContainer.textContent = city;
+	imageContainer.src = `http://openweathermap.org/img/w/${image}.png`;
+	degreesContainer.textContent = `Температура ${degree} °C`;
+	speedWindContainer.textContent = `Скорость ветра ${speedWind} м/с`;
 	
 	container.appendChild( cityContainer );
+	container.appendChild( imageContainer );
 	container.appendChild( degreesContainer );
+	container.appendChild( speedWindContainer );
 	
 	return container;
 }
