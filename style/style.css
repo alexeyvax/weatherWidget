@@ -1,14 +1,95 @@
+div.weather-controller
+{
+	text-align: center;
+}
+
+input
+{
+	padding: 8px;
+	border-radius: 6px;
+}
+
+button
+{
+	display: inline-block;
+	padding: 9px;
+	color: white;
+	background-color: blue;
+	border: none;
+	border-radius: 6px;
+}
+
+span.description
+{
+	position: absolute;
+	top: 60px;
+	left: 50%;
+	
+	/*padding: 8px;*/
+	/*background-color: #dedede;*/
+	/*border: 1px solid #dedede;*/
+	/*border-radius: 6px;*/
+	
+	transform: translateX(-180px);
+}
+
+/*span.description::before
+{
+	position: absolute;
+	top: -18px;
+	left: 10px;
+	
+	width: 0;
+	height: 0;
+	content: '';
+	border: 8px solid transparent;
+	border-bottom: 10px solid #dedede;
+}*/
+
 ul.output
 {
+	width: 100%;
 	padding: 0;
-	margin: 0;
+	margin: 50px 0 0 0;
 }
 
 ul.output>li
 {
-	display: block;
-	padding: 10px 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 500px;
+	padding: 20px;
+	margin: 10px auto 0;
 	list-style: none;
+	border: 1px solid #dedede;
+	border-radius: 6px;
+}
+
+ul.output>li>span.city
+{
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 30px;
+}
+
+ul.output>li>div.data-weather
+{
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+}
+
+ul.output>li>div.data-weather>img
+{
+	display: inline-block;
+}
+
+ul.output>li>div.data-weather>span.degrees
+{
+	display: block;
+	margin-bottom: 10px;
+	text-align: left;
 }
 
 /*span.degrees,
