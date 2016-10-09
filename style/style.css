@@ -24,27 +24,8 @@ span.description
 	position: absolute;
 	top: 60px;
 	left: 50%;
-	
-	/*padding: 8px;*/
-	/*background-color: #dedede;*/
-	/*border: 1px solid #dedede;*/
-	/*border-radius: 6px;*/
-	
 	transform: translateX(-180px);
 }
-
-/*span.description::before
-{
-	position: absolute;
-	top: -18px;
-	left: 10px;
-	
-	width: 0;
-	height: 0;
-	content: '';
-	border: 8px solid transparent;
-	border-bottom: 10px solid #dedede;
-}*/
 
 ul.output
 {
@@ -91,32 +72,3 @@ ul.output>li>div.data-weather>span.degrees
 	margin-bottom: 10px;
 	text-align: left;
 }
-
-/*span.degrees,
-span.speedWind
-{
-	position: relative;
-	
-	padding-right: 30px;
-}
-
-span.degrees::before,
-span.speedWind::before
-{
-	position: absolute;
-	top: 0;
-	right: 0;
-	
-	width: 30px;
-	height: 100%;
-}
-
-span.degrees::before
-{
-	content: '°C';
-}
-
-span.speedWind::before
-{
-	content: 'м/с';
-}*/
