@@ -4,6 +4,7 @@ function main()
 	const weather = angular.module( 'weather', [] );
 	weather.constant( 'ENDPOINT', 'http://api.openweathermap.org/data/2.5/weather' );
 	weather.constant( 'APPID', '4ad85fe4a756ae6420b5a9f180c811ed' );
+	
 	const storeCities = {};
 	
 	weather.controller( 'weatherController', [ '$scope', '$http', 'ENDPOINT', 'APPID', ( $scope, $http, ENDPOINT, APPID ) =>

@@ -3,13 +3,13 @@ div.weather-controller
 	text-align: center;
 }
 
-input
+div.weather-controller>form>input
 {
 	padding: 8px;
 	border-radius: 6px;
 }
 
-button
+div.weather-controller>form>button
 {
 	display: inline-block;
 	padding: 9px;
@@ -19,7 +19,7 @@ button
 	border-radius: 6px;
 }
 
-span.description
+div.weather-controller>span.description
 {
 	position: absolute;
 	top: 60px;
@@ -27,14 +27,14 @@ span.description
 	transform: translateX(-180px);
 }
 
-ul.output
+div.weather-controller>ul.output
 {
 	width: 100%;
 	padding: 0;
 	margin: 50px 0 0 0;
 }
 
-ul.output>li
+div.weather-controller>ul.output>li
 {
 	display: flex;
 	justify-content: space-between;
@@ -47,26 +47,26 @@ ul.output>li
 	border-radius: 6px;
 }
 
-ul.output>li>span.city
+div.weather-controller>ul.output>li>span.city
 {
 	display: inline-block;
 	vertical-align: top;
 	margin-right: 30px;
 }
 
-ul.output>li>div.data-weather
+div.weather-controller>ul.output>li>div.data-weather
 {
 	display: inline-block;
 	vertical-align: top;
 	text-align: center;
 }
 
-ul.output>li>div.data-weather>img
+div.weather-controller>ul.output>li>div.data-weather>img
 {
 	display: inline-block;
 }
 
-ul.output>li>div.data-weather>span.degrees
+div.weather-controller>ul.output>li>div.data-weather>span.degrees
 {
 	display: block;
 	margin-bottom: 10px;
