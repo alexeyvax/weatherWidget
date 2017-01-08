@@ -1,2 +1,6 @@
 /nbproject/private/
 /bower_components/
+/node_modules/
+
+.gitignore
+.editorconfig
