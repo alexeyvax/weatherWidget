@@ -58,7 +58,7 @@ function main()
 			}
 			else
 			{
-				$scope.descriptionEmpty = 'Введите город';
+				$scope.descriptionEmpty = 'Enter sity';
 			}
 		}
 	}]);

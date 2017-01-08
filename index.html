@@ -12,8 +12,8 @@
 
 <div ng-controller="weatherController" class="weather-controller">
 	<form ng-submit="this.showWeather( city )">
-		<input type="text" ng-model="city" id="dataInput" placeholder="Введите название города" />
-		<button type="submit">Узнать погоду в этом городе</button>
+		<input type="text" ng-model="city" id="dataInput" placeholder="Enter name sity" />
+		<button type="submit">Check the weather in this town</button>
 	</form>
 	<span class="description">{{descriptionEmpty}}</span>
 	<ul class="output">
@@ -21,8 +21,8 @@
 			<span class="city">{{city.city}}</span>
 			<div class="data-weather">
 				<img ng-src="http://openweathermap.org/img/w/{{city.image}}.png" alt="" />
-				<span class="degrees">Температура {{city.degree}} °C</span>
-				<span class="speed-wind">Скорость ветра {{city.speedWind}} м/с</span>
+				<span class="degrees">Temperature {{city.degree}} °C</span>
+				<span class="speed-wind">Wind speed {{city.speedWind}} м/с</span>
 			</div>
 		</li>
 	</ul>
